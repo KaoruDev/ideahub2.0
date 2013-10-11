@@ -1,0 +1,283 @@
+
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600,900);
+
+*{
+	box-sizing: border-box;
+}
+
+body, html{
+	margin:0px;
+	padding:0px;
+	font-family: 'Titillium Web', sans-serif;
+	background: url("witewall_3_@2X.png") repeat top left;
+}
+
+h1, h2, h3, h4, h5{
+	padding: 0;
+	margin: 0;
+}
+
+h1{
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 900;
+}
+
+#templates{
+	display: none;
+}
+
+
+/**********FOUNDATION RESET*****************/
+
+
+.buttonReset{
+	font-weight:normal;
+	padding: 5;
+	border-radius: 5px;
+	background-color: #3498db;
+}
+
+ul.inline-list{
+	margin-bottom: 5px;
+}
+
+/*****************NAV*********************/
+.navBar{
+	background-color: #2f2f2f;
+	position: fixed;
+	top: 0;	
+	transition: all 0.3s linear 0;
+	width:100%;
+	z-index: 100;
+	height: 72px;
+}
+
+.navBar:hover{
+	height: 117px;
+}
+
+
+.navContainer{
+	background-color: #2f2f2f;
+	margin: 0 auto;
+	width: 980px;
+}
+
+
+.subLevelNav{
+	clear:both;
+	opacity: 0;
+	height: 0;
+	visibility: hidden;
+}
+
+/******** Nav bar slide *********/
+
+.navBar:hover .subLevelNav{
+	opacity: 100;
+	transition: all 0.1s linear 3s;
+	-webkit-transition: opacity 0.1s ease-out 0.1s;
+	visibility: visible;
+}
+
+.topLevelNav h1 a{
+	color: #3498db;
+	float:left;
+	margin: 0;
+	padding: 5px 20px;
+	transition: all 0.1s linear 0;
+}
+
+.topLevelNav h1 a:hover{
+	background-color: #50136E;
+	color: #ccc;
+}
+
+.topLevelNav .icon-cogs{
+	color: #3498db;
+	display: inline-block;
+	float: right;
+	font-size: 2em;
+	margin: 0px;
+	padding: 19px;
+	text-align: right;
+}
+
+
+.hello{
+	color: #aaa;
+	font-size: 1.3em;
+	float: right;
+	padding-top: 22px;
+
+}
+
+.subHeadLine{
+	color: #aaa;
+	margin-left: 20px;
+	float:left;
+}
+
+.subNavLinks h5{
+	display: inline-block;
+	float:right;
+}
+
+.subNavLinks h5 a{
+	color: #3498db;
+	display: inline-block;
+	padding: 10px 20px;
+	transition: all 0.1s linear 0;
+}
+
+.subNavLinks h5 a:hover{
+	background-color: #50136E;
+	color: #ccc;
+}
+
+
+/************      BODY      **********************/
+.avatar{
+	width:100px;
+}
+
+.author{
+	word-wrap: break-word;
+}
+
+#ideaFeed .ideaContainer:before{
+	content: ''
+	display: inline-block;
+	margin: 10px 0px 40px;
+	width: 100%;
+	height: 2px;
+	background: #eee;
+}
+
+.ideaDesc{
+	height: 90px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	transition: all 0.3s linear;
+}
+
+.ideaSubmit{
+	margin-top: 5px;
+}
+
+.fullDesc{
+	height: 300px;
+	overflow: auto;
+}
+
+.mainBody{
+	min-height: 100%;
+	background-color: rgba(255, 255, 255, .6);
+	box-shadow: 0px 0px 20px #ccc;
+	padding: 60px 0px 0px;
+}
+
+.voteCount{
+	margin: 10px 0;
+	font-size: 1.3em;
+}
+
+.votesBox{
+	text-align: right;
+}
+
+.voteUp, .voteText{
+	font-size: 2em;
+}
+
+.voteNum{
+	font-size: 1.5em;
+	display: inline-block;
+}
+
+/*******************FORM*******************/
+.formBody{
+	margin-top: 30px;
+	padding: 0 30px;
+}
+
+.avatar{
+	width:100px;
+}
+
+/***********************Profile Page and Profile Items*******************************/
+
+.edit-title {
+	font-size: .25em;
+	vertical-align: bottom;
+}
+
+.interested-user {
+	text-align: center;
+}
+
+.interested-user img {
+	margin-bottom: 20px;
+}
+
+.intersted-user p {
+	text-align: center;
+}
+
+.interested-avatar {
+	padding: 20 70 0 70;
+}
+.formLastRow:first-child{
+	padding-left: 0;
+}
+
+.formLastRow:last-child{
+	padding-right: 0;
+}
+
+/*******************Idea Profile page *****************/
+.singleIdeaFeed{
+	margin: 50px 20px;
+}
+
+/****************** Profile ***************************/
+
+.your-ideas {
+	margin-top: 50px;
+}
+
+/*****************Reflexive settings ******************/
+
+@media only screen and (max-width: 980px) {
+	.navContainer{
+		width: 100%;
+	}
+	.navBar:hover{
+		height: 112px;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.hello{
+		display:none;
+	}
+
+	.subHeadLine{
+		display: none;
+	}
+
+	.navBar:hover{
+		height: 195px;
+	}
+
+	.subNavLinks h5{
+		text-align: center;
+		clear:both;
+		display: block;
+		float: none;
+	}
+}
+
+
+
+

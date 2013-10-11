@@ -1,0 +1,118 @@
+<html>
+<head>
+	<link rel="stylesheet" text="text/css" href="css/font-awesome/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/foundation.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+	
+</head>
+
+<body>
+
+  <div class="navBar">
+    <div class="navContainer">
+      <div class="topLevelNav">
+        <h1><a href="" class="login">IdeaHub</a></h1>
+        <i class="icon-cogs"></i>
+        <div class="hello"></div>
+      </div>
+      <div class="subLevelNav">
+        <h3 class="subHeadLine">We haz idea!</h3>
+        <div class="subNavLinks">
+          <h5><a href="index.html" class="logout">Log out</a></h5>
+          <h5><a href="form.html">Add Idea!</a></h5>
+          <h5><a href="" class="myProfile">My Profile</a></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Header and Nav -->
+
+  <div class="row mainBody">
+
+    <!-- Main Feed -->
+    <div class="large-12 columns">
+      <div id="ideasFeed"></div>
+    <div>
+ 
+
+    <!-- Footer -->
+   
+    <footer class="row">
+      <div class="large-12 small-12 columns">
+        <hr />
+        <div class="row">
+          <div class="large-5 small-5 columns">
+            <p>IdeaHub: We haz ideas!</p>
+          </div>
+          <div class="large-7 small-7 columns">
+            <ul class="inline-list right">
+               <li><a href="" class="myProfile">My Profile</a></li>
+               <li><a href="form.html">Add Idea</a></li>
+              <li><a href="index.html" class="logout">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <!--Start Templating-->
+  <div id="templates">
+    <script class="idea" type="text/templates">
+
+      <div id="ideaFeed">
+        <div class="row ideaContainer">
+          <div class="columns small-3 avatar">
+            <img src="{{ avatar }}" />
+            <span class="author">{{ author }}</span>
+          </div>
+          <div class="columns small-7">
+            <h3 class="ideaTitle">{{ ideaTitle }}</h3> 
+            <div class="ideaDesc">{{ ideaDesc }}</div>
+          
+            <ul class="inline-list">
+              <li><a href="" class="showMoreDesc">Show More</a></li>
+              <li>Looking for {{ numWanted }} members.</li>
+            </ul>
+          </div>
+          <div class="columns small-2">
+            <button class="login buttonReset">Im interested</button>
+          </div>
+        </div>
+      </div>
+
+    </script>
+  </div>
+
+
+<!-- Vendor Scripts -->
+<script type="text/javascript" src="vendor/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="vendor/underscore.js"></script>
+<script type="text/javascript" src="vendor/backbone.js"></script>
+<script type="text/javascript" src="vendor/tinymce/tinymce.min.js"></script>
+
+<!-- Firebase Scripts -->
+<script type="text/javascript" src="vendor/firebase.js"></script>
+<script type="text/javascript" src="vendor/firebase-simple-login.js"></script>
+
+<!--Backbone-->
+<script type="text/javascript" src="src/models.js"></script>
+<script type="text/javascript" src="src/collections.js"></script>
+<script type="text/javascript" src="src/views.js"></script>
+
+<!-- My Firebase Script -->
+<script type="text/javascript" src="src/myFirebase.js"></script>
+
+<!-- Globals -->
+<script type="text/javascript" src="src/util.js"></script>
+
+<!-- Main js -->
+<script type="text/javascript" src="src/main.js"></script>
+<script type="text/javascript" src="src/listInit.js"></script>
+<script type="text/javascript" src="src/route.js"></script>
+
+</body>
+</html>
