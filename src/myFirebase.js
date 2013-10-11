@@ -7,8 +7,8 @@
 	;
 
 	window.DB = {
-		getIdea: function(callback){
-			fireBideas.child(id).once("value",function(snapshot){
+		getIdea: function(id, callback){
+			fireBIdeas.child(id).once("value",function(snapshot){
 				var idea = snapshot.val();
 				callback(idea);
 			})
