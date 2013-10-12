@@ -38,13 +38,23 @@
 		},
 
 		userInterest: function(button){
+			var self = this;
+
 			$(this.el).find(".interestBtn").text("All in!");
 			$(this.el).find(".interestBtn").removeClass("interestBtn");
 			
+			//Update idea info on DB
 			var newInterestList = this.model.get("interestList");
 			newInterestList.push(user.id)
 			this.model.set({ interestList: newInterestList });
 			DB.setIdea(this.model.get("ideaId"), this.model.toJSON(), this.model.get("priority"));
+
+			//Update user info on DB
+			DB.getUser(user.id, function(DBuser){
+				DBuser.iList.push(self.model.get("ideaId"));
+				DB.setUser(user.id, DBuser);
+			})
+
 		}
 	});
 

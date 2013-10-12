@@ -17,12 +17,31 @@
 					profileUrl: profileUser.userOb.profileUrl
 				}
 			}).render();
-		});
+
+			// create a view for ideas and interest
+
+			var profileIdeas = new ProfileIdeasCollection();
+
+			var profileIdeaListView = new ProfileIdeasListView({
+				collection: profileIdeas,
+				el: ".userIdeas"
+			})
+
+			DB.getAllIdeas(function(storedIdea){
+				if(false){
+					console.log("I authored!");
+
+				}else if(profileUser.iList.indexOf(storedIdea.ideaId) > -1){
+					console.log("I interested!");
+					console.log("ilist", profileUser.iList);
+					console.log("idea id", storedIdea.ideaId)
+					console.log(profileUser.iList.indexOf(storedIdea.ideaId));
+				}
+				profileIdeas.add(storedIdea);
+			});// End of DB.getAllIdeas
+
+		}); //End of DB.getUser
 		
-
-		// create a view for ideas and interest
-
-
 
 
 //*************************************************************//

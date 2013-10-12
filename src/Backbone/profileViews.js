@@ -12,8 +12,12 @@
 	});
 
 	window.ProfileIdeasListView = Backbone.View.extend({
-
-		
+		initialize: function(options){
+			this.listenTo(this.collection, "add", this.addNewIdea)
+		},
+		addNewIdea: function(newModel){
+			console.log(newModel);
+		}
 	}) 
 
 })();
