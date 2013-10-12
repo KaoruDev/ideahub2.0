@@ -1,0 +1,153 @@
+<html>
+<head>
+	<title>Idea Hub</title>
+  <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/foundation.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">	
+</head>
+<body>
+	<!-- Header and Nav -->
+  <div class="navBar">
+    <div class="navContainer">
+      <div class="topLevelNav">
+        <h1><a href="user.html" class="login">IdeaHub</a></h1>
+        <i class="icon-cogs"></i>
+        <div class="hello"></div>
+      </div>
+      <div class="subLevelNav">
+        <h3 class="subHeadLine">We haz idea!</h3>
+        <div class="subNavLinks">
+          <a href="index.html" class="logout">Log out</a>
+          <a href="form.html">Add Idea!</a>
+          <a href="#" class="myProfile">My Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Header and Nav -->
+  <div class="row mainBody">
+
+    <!-- Main Feed -->
+
+    <div class="small-12 columns">
+    <!-- User's Profile -->
+      <div class="row userBio"></div>
+
+
+    <!-- User's Ideas -->  
+
+    <h3 class="ideasHeader">Ideas</h3>
+    <div class="row"> 
+      <div class="small-12 columns authorIdeas">
+        
+      </div>
+    </div>
+
+    <h3 class="interestHeader">Interests</h3>
+      <div class="small-12 columns userInterests">
+
+      </div>
+    </div>
+
+ 
+  <!-- Footer -->
+ 
+      <footer class="row">
+        <div class="small-12 columns">
+          <hr />
+          <div class="row">
+            <div class="small-5 columns">
+              <p>We haz idea!</p>
+            </div>
+            <div class="small-7 columns">
+              <ul class="inline-list right">
+                <li><a href="#" class="myProfile">My Profile</a></li>
+                <li><a href="#" class="logout">Logout</a></li>
+                <li><a href="form.html">Add Idea</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+  </div>
+
+
+  <!--Start Templating-->
+  <div id="templates">
+  
+    <!-- Bio Template -->
+
+    <script class="bioTemp" type="text/templates">      
+
+        <div class="columns small-2">
+          <img src="{{ avatar }}" alt=""/>
+        </div>
+        <div class="columns small-6 left">
+          <h3>{{ username }}</h3><br>
+          <h4><a href="mailto:{{ email }}">Email</a></h4><br>
+          <h4><a href="{{ profileUrl }}">Github</a></h4><br>
+        </div>
+
+    </script>
+
+    <!-- Idea Template -->
+
+    <script class="userAuthorTemp" type="text/templates">
+
+        <div class="oneUserIdea"><h5>{{ ideaTitle }}</h5>
+        {{ ideaDesc }}
+
+    </script>
+
+
+    <!-- Interest Template -->
+
+    <script class="userInterestTemp" type="text/templates">
+
+      <div class="row">
+        <div class="small-3 columns avatar">
+          <img src="{{ avatar }}" alt=""/>
+          <span class="author">{{ author }}</span>
+        </div>
+        <div class="small-10 columns">
+          <h4>{{ ideaTitle }}</h4>
+          {{ ideaDesc }}
+        </div>
+      </div>
+    </script>
+
+  </div>
+  <!--End Templating-->
+
+
+
+<!-- Vendor Scripts -->
+<script type="text/javascript" src="vendor/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="vendor/underscore.js"></script>
+<script type="text/javascript" src="vendor/backbone.js"></script>
+<script type="text/javascript" src="vendor/tinymce/tinymce.min.js"></script>
+
+<!-- Firebase Scripts -->
+<script type="text/javascript" src="vendor/firebase.js"></script>
+<script type="text/javascript" src="vendor/firebase-simple-login.js"></script>
+
+<!-- Globals -->
+<script type="text/javascript" src="src/util.js"></script>
+
+<!-- My Firebase Script -->
+<script type="text/javascript" src="src/myFirebase.js"></script>
+
+<!--Backbone-->
+<script type="text/javascript" src="src/Backbone/models.js"></script>
+<script type="text/javascript" src="src/Backbone/collections.js"></script>
+<script type="text/javascript" src="src/Backbone/ideaViews.js"></script>
+
+<!-- Main js -->
+<script type="text/javascript" src="src/Inits/ideaInit.js"></script>
+<script type="text/javascript" src="src/main.js"></script>
+<script type="text/javascript" src="src/route.js"></script>
+
+
+</body>
+</html>

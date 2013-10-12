@@ -49,6 +49,9 @@
 			case "profile.html":
 				profileInit();
 				break;
+			case "idea.html":
+				ideaInit();
+				break;
 			default:
 				break;
 		}

@@ -1,13 +1,9 @@
 (function(){
 	window.profileInit = function(){
-		// create a view for bio
-		var getURLParameter = function(name) {
-		    return decodeURI(
-		        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
-		    );
-		}
-
-		DB.getUser(getURLParameter("profileId"), function(profileUser){
+		// We first need to figure out who's profile the view is looking at.
+		// then based on that information we can populate the page.
+		
+		DB.getUser(_.getURLParameter("profileId"), function(profileUser){
 			new ProfileBioView({
 				el: ".userBio",
 				profileInfo: {
@@ -77,6 +73,6 @@
 		});
 
 
-	}
+	};//End of Profile Init.
 
 })();
