@@ -19,9 +19,9 @@
       <div class="subLevelNav">
         <h3 class="subHeadLine">We haz idea!</h3>
         <div class="subNavLinks">
-          <h5><a href="index.html" class="logout">Log out</a></h5>
-          <h5><a href="form.html">Add Idea!</a></h5>
-          <h5><a href="" class="myProfile">My Profile</a></h5>
+          <a href="index.html" class="logout">Log out</a>
+          <a href="form.html">Add Idea!</a>
+          <a href="profile.html" class="myProfile">My Profile</a>
         </div>
       </div>
     </div>
@@ -63,24 +63,22 @@
   <div id="templates">
     <script class="idea" type="text/templates">
 
-      <div id="ideaFeed">
-        <div class="row ideaContainer">
-          <div class="columns small-3 avatar">
-            <img src="{{ avatar }}" />
-            <span class="author">{{ author }}</span>
-          </div>
-          <div class="columns small-7">
-            <h3 class="ideaTitle">{{ ideaTitle }}</h3> 
-            <div class="ideaDesc">{{ ideaDesc }}</div>
-          
-            <ul class="inline-list">
-              <li><a href="" class="showMoreDesc">Show More</a></li>
-              <li>Looking for {{ numWanted }} members.</li>
-            </ul>
-          </div>
-          <div class="columns small-2">
-            <button class="buttonReset interestBtn">I&rsquo;m interested</button>
-          </div>
+      <div class="row ideaContainer">
+        <div class="columns small-3 avatar">
+          <img src="{{ avatar }}" />
+          <span class="author">{{ author }}</span>
+        </div>
+        <div class="columns small-7">
+          <h3 class="ideaTitle">{{ ideaTitle }}</h3> 
+          <div class="ideaDesc">{{ ideaDesc }}</div>
+        
+          <ul class="inline-list">
+            <li><a href="" class="showMoreDesc">Show More</a></li>
+            <li>Looking for {{ numWanted }} members.</li>
+          </ul>
+        </div>
+        <div class="columns small-2">
+          <button class="buttonReset interestBtn">I&rsquo;m interested</button>
         </div>
       </div>
 

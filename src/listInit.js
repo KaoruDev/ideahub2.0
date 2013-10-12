@@ -21,4 +21,16 @@
 		evt.preventDefault;
 		auth.logout();
 	});
+
+	$(document).on("click", ".showMoreDesc", function(e){
+		e.preventDefault();
+		if($(this).text() === "Show More"){
+		 	$(this).text("Show Less")
+		}else {
+			$(this).text("Show More")
+		}
+		$(this).closest(".columns").find(".ideaDesc").toggleClass("fullDesc");
+	});
+
+	
 })();

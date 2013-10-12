@@ -15,7 +15,7 @@
 			window.user = user
 
 			// once logged-in transfer user to user.html.
-			if(pageLocation === "index.html" && pageLocation){
+			if(pageLocation === "index.html" || pageLocation === ""){
 				window.location.assign("user.html");
 			}
 			// if user is new to page, record her info.
@@ -31,6 +31,13 @@
 	});
 
 	switch(pageLocation){
+		case "":
+			$(".login").on("click", function(evt){
+				evt.preventDefault;
+				auth.login("github");
+			});
+			listInit();
+			break;
 		case "index.html":
 			$(".login").on("click", function(evt){
 				evt.preventDefault;

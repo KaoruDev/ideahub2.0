@@ -5,9 +5,9 @@
 	box-sizing: border-box;
 }
 
-body, html{
-	margin:0px;
-	padding:0px;
+body{
+	margin: 0px;
+	padding: 60px 0 0 0;
 	font-family: 'Titillium Web', sans-serif;
 	background: url("witewall_3_@2X.png") repeat top left;
 }
@@ -118,19 +118,17 @@ ul.inline-list{
 	float:left;
 }
 
-.subNavLinks h5{
-	display: inline-block;
-	float:right;
-}
-
-.subNavLinks h5 a{
+.subNavLinks a{
 	color: #3498db;
 	display: inline-block;
 	padding: 10px 20px;
+	float: right;
+	font-size: 1.2em;
+	font-weight: 600;
 	transition: all 0.1s linear 0;
 }
 
-.subNavLinks h5 a:hover{
+.subNavLinks a:hover{
 	background-color: #50136E;
 	color: #ccc;
 }
@@ -174,7 +172,7 @@ ul.inline-list{
 	min-height: 100%;
 	background-color: rgba(255, 255, 255, .6);
 	box-shadow: 0px 0px 20px #ccc;
-	padding: 60px 0px 0px;
+	padding: 28px 0 0 0;
 }
 
 .voteCount{
@@ -196,10 +194,6 @@ ul.inline-list{
 }
 
 /*******************FORM*******************/
-.formBody{
-	margin-top: 30px;
-	padding: 0 30px;
-}
 
 .avatar{
 	width:100px;
@@ -207,33 +201,28 @@ ul.inline-list{
 
 /***********************Profile Page and Profile Items*******************************/
 
-.edit-title {
-	font-size: .25em;
-	vertical-align: bottom;
-}
 
-.interested-user {
-	text-align: center;
-}
-
-.interested-user img {
+.userBio .columns, .userIdeas .columns{
 	margin-bottom: 20px;
 }
 
-.intersted-user p {
-	text-align: center;
+.oneUserIdea{
+	float:left;
+	width: 31%;
+	margin: 5px;
+	padding: 6px;
+	border-radius: 10px;
+	border: 2px #888 solid;
+	transition: border 0.15s ease-out 0s;
+	overflow: auto;
+	height: 150px;
 }
 
-.interested-avatar {
-	padding: 20 70 0 70;
-}
-.formLastRow:first-child{
-	padding-left: 0;
+.oneUserIdea:hover{
+	border: 2px #3498db solid;
+	
 }
 
-.formLastRow:last-child{
-	padding-right: 0;
-}
 
 /*******************Idea Profile page *****************/
 .singleIdeaFeed{
@@ -253,7 +242,7 @@ ul.inline-list{
 		width: 100%;
 	}
 	.navBar:hover{
-		height: 112px;
+		height: 110px;
 	}
 }
 

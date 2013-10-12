@@ -23,7 +23,7 @@
 		},
 
 		setIdea: function(ideaId, ideaObj, priority){
-			fireBIdeas.child(ideaId).setWithPriority(ideaObj, priority);
+			fireBIdeas.child(ideaId).setWithPriority(ideaObj, priority + "");
 		},
 
 		getUser: function(id, callback){

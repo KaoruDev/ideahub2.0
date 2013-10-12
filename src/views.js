@@ -17,25 +17,34 @@
 		},
 
 		events: {
-			"click .interestBtn": "userInterest"
+			"click .interestBtn": "userInterest",
+			"click .login": "login"
 		},
 
 		render: function(){
 			var newHtml = this.templateFiller(this.model.toJSON());
 
 			$(this.el).html(newHtml);
-			if(isUserInterested(this.model.get("interestList"))){
-				console.log("this running?")
+
+			if(window.user && isUserInterested(this.model.get("interestList"))){
 				$(this.el).find(".interestBtn").text("All in!");
 				$(this.el).find(".interestBtn").removeClass("interestBtn");
 			}
 
 		},
 
+		login: function(){
+			auth.login("github");
+		},
+
 		userInterest: function(button){
 			$(this.el).find(".interestBtn").text("All in!");
 			$(this.el).find(".interestBtn").removeClass("interestBtn");
-			console.log("once!");
+			
+			var newInterestList = this.model.get("interestList");
+			newInterestList.push(user.id)
+			this.model.set({ interestList: newInterestList });
+			DB.setIdea(this.model.get("ideaId"), this.model.toJSON(), this.model.get("priority"));
 		}
 	});
 
