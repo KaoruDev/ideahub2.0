@@ -34,10 +34,17 @@
 		initialize: function(options){
 			this.templateGen = _.getTemplate("userAuthorTemp");
 		},
+		events:{
+			"click .oneUserIdea": "navigateToIdea"
+		},
 
 		render: function(){
 			var newHtml = this.templateGen(this.model.toJSON());
 			$(this.el).html(newHtml);
+		},
+
+		navigateToIdea: function(){
+			window.location.assign("idea.html?ideaId=" + this.model.get("ideaId"));
 		}
 	}); 
 

@@ -224,7 +224,11 @@ a:hover{
 
 .oneUserIdea:hover{
 	border: 2px #3498db solid;
-	
+	cursor: hand;	
+}
+
+.oneUserIdea:hover a{
+	color: #FFC225;
 }
 
 

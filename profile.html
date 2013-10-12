@@ -26,12 +26,11 @@
   </div>
   <!-- End Header and Nav -->
   <div class="row mainBody">
-
-    <!-- Main Feed -->
-
     <div class="small-12 columns">
+
+
     <!-- User's Profile -->
-      <div class="row userBio"></div>
+    <div class="row userBio"></div>
 
 
     <!-- User's Ideas -->  
@@ -44,31 +43,29 @@
     </div>
 
     <h3 class="interestHeader">Interests</h3>
-      <div class="small-12 columns userInterests">
+    <div class="small-12 columns userInterests">
 
-      </div>
     </div>
 
  
   <!-- Footer -->
- 
-      <footer class="row">
-        <div class="small-12 columns">
-          <hr />
-          <div class="row">
-            <div class="small-5 columns">
-              <p>We haz idea!</p>
-            </div>
-            <div class="small-7 columns">
-              <ul class="inline-list right">
-                <li><a href="#" class="myProfile">My Profile</a></li>
-                <li><a href="#" class="logout">Logout</a></li>
-                <li><a href="form.html">Add Idea</a></li>
-              </ul>
-            </div>
+    <footer class="row">
+      <div class="small-12 columns">
+        <hr />
+        <div class="row">
+          <div class="small-5 columns">
+            <p>We haz idea!</p>
+          </div>
+          <div class="small-7 columns">
+            <ul class="inline-list right">
+              <li><a href="#" class="myProfile">My Profile</a></li>
+              <li><a href="#" class="logout">Logout</a></li>
+              <li><a href="form.html">Add Idea</a></li>
+            </ul>
           </div>
         </div>
-      </footer>
+      </div>
+    </footer>
 
   </div>
 
@@ -95,8 +92,10 @@
 
     <script class="userAuthorTemp" type="text/templates">
 
-        <div class="oneUserIdea"><h5>{{ ideaTitle }}</h5>
+        <div class="oneUserIdea"><h5><a href="idea.html?ideaId={{ ideaId }}">{{ ideaTitle }}</a></h5>
+        <span>Seeking {{ numWanted }} members</span>
         {{ ideaDesc }}
+        </div>
 
     </script>
 
@@ -108,10 +107,10 @@
       <div class="row">
         <div class="small-3 columns avatar">
           <img src="{{ avatar }}" alt=""/>
-          <span class="author">{{ author }}</span>
+          <span class="author"><a href="profile.html?profileId={{ authorId }}">{{ author }}</a></span>
         </div>
         <div class="small-10 columns">
-          <h4>{{ ideaTitle }}</h4>
+          <h4><a href="idea.html?ideaId={{ ideaId }}">{{ ideaTitle }}</a></h4>
           {{ ideaDesc }}
         </div>
       </div>

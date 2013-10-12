@@ -66,10 +66,10 @@
       <div class="row ideaContainer">
         <div class="columns small-3 avatar">
           <img src="{{ avatar }}" />
-          <span class="author">{{ author }}</span>
+          <a href="profile.html?profileId={{ authorId }}"><span class="author">{{ author }}</span></a>
         </div>
         <div class="columns small-7">
-          <h3 class="ideaTitle">{{ ideaTitle }}</h3> 
+          <h3 class="ideaTitle"><a href="idea.html?ideaId={{ ideaId}}">{{ ideaTitle }}</a></h3> 
           <div class="ideaDesc">{{ ideaDesc }}</div>
         
           <ul class="inline-list">
@@ -105,7 +105,7 @@
 <!--Backbone-->
 <script type="text/javascript" src="src/Backbone/models.js"></script>
 <script type="text/javascript" src="src/Backbone/collections.js"></script>
-<script type="text/javascript" src="src/Backbone/views.js"></script>
+<script type="text/javascript" src="src/Backbone/listViews.js"></script>
 
 <!-- Main js -->
 <script type="text/javascript" src="src/main.js"></script>

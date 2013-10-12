@@ -36,7 +36,9 @@
 				if(profileUser.authorList.indexOf(storedIdea.ideaId) > -1){
 					var info = {
 						ideaTitle: storedIdea.ideaTitle,
-						ideaDesc: storedIdea.ideaDesc
+						ideaId: storedIdea.ideaId,
+						ideaDesc: storedIdea.ideaDesc,
+						numWanted: storedIdea.numWanted
 					};
 					authorIdeas.add(info);
 					
@@ -44,6 +46,8 @@
 					var info = {
 						avatar: storedIdea.avatar,
 						author: storedIdea.author,
+						authorId: storedIdea.authorId,
+						ideaId: storedIdea.ideaId,
 						ideaTitle: storedIdea.ideaTitle,
 						ideaDesc: storedIdea.ideaDesc
 					};
