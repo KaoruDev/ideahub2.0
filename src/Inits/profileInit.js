@@ -18,26 +18,44 @@
 				}
 			}).render();
 
-			// create a view for ideas and interest
+			// collection and parent view for authored ideas
 
-			var profileIdeas = new ProfileIdeasCollection();
+			var authorIdeas = new ProfileIdeasCollection();
 
-			var profileIdeaListView = new ProfileIdeasListView({
-				collection: profileIdeas,
-				el: ".userIdeas"
+			var profileAuthorListView = new ProfileAuthorListView({
+				collection: authorIdeas,
+				el: ".authorIdeas"
+			})
+
+			//collection and parent view for intersted ideas
+
+			var interestIdeas = new ProfileIdeasCollection();
+
+			var profileInterestListView = new ProfileInterestListView({
+				collection: interestIdeas,
+				el: ".userInterests"
 			})
 
 			DB.getAllIdeas(function(storedIdea){
-				if(false){
-					console.log("I authored!");
-
+				if(profileUser.authorList.indexOf(storedIdea.ideaId) > -1){
+					var info = {
+						ideaTitle: storedIdea.ideaTitle,
+						ideaDesc: storedIdea.ideaDesc
+					};
+					authorIdeas.add(info);
+					
 				}else if(profileUser.iList.indexOf(storedIdea.ideaId) > -1){
-					console.log("I interested!");
-					console.log("ilist", profileUser.iList);
-					console.log("idea id", storedIdea.ideaId)
-					console.log(profileUser.iList.indexOf(storedIdea.ideaId));
+					var info = {
+						avatar: storedIdea.avatar,
+						author: storedIdea.author,
+						ideaTitle: storedIdea.ideaTitle,
+						ideaDesc: storedIdea.ideaDesc
+					};
+					interestIdeas.add(info);
+
+					
 				}
-				profileIdeas.add(storedIdea);
+
 			});// End of DB.getAllIdeas
 
 		}); //End of DB.getUser

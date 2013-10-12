@@ -38,14 +38,13 @@
 
     <h3 class="ideasHeader">Ideas</h3>
     <div class="row"> 
-      <div class="small-12 columns userIdeas">
+      <div class="small-12 columns authorIdeas">
         
       </div>
     </div>
 
     <h3 class="interestHeader">Interests</h3>
-    <div class="row userInterests">
-      <div class="small-12 columns">
+      <div class="small-12 columns userInterests">
 
       </div>
     </div>
@@ -94,16 +93,10 @@
 
     <!-- Idea Template -->
 
-    <script class="userIdeaTemp" type="text/templates">
+    <script class="userAuthorTemp" type="text/templates">
 
-        <div class="oneUserIdea"><h5>Idea Title</h5>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, amet, doloremque, commodi, officiis nihil eos voluptatum ratione ex dicta deserunt eum beatae autem ipsam! Labore, beatae laudantium alias similique illo.</div>
-        <div class="oneUserIdea"><h5>Idea Title</h5>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, amet, doloremque, commodi, officiis nihil eos voluptatum ratione ex dicta deserunt eum beatae autem ipsam! Labore, beatae laudantium alias similique illo.</div>
-        <div class="oneUserIdea"><h5>Idea Title</h5>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, amet, doloremque, commodi, officiis nihil eos voluptatum ratione ex dicta deserunt eum beatae autem ipsam! Labore, beatae laudantium alias similique illo.</div>
-        <div class="oneUserIdea"><h5>Idea Title</h5>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, amet, doloremque, commodi, officiis nihil eos voluptatum ratione ex dicta deserunt eum beatae autem ipsam! Labore, beatae laudantium alias similique illo.</div>
+        <div class="oneUserIdea"><h5>{{ ideaTitle }}</h5>
+        {{ ideaDesc }}
 
     </script>
 
@@ -114,27 +107,14 @@
 
       <div class="row">
         <div class="small-3 columns avatar">
-          <img src="http://placekitten.com/300/300" alt=""/>
-          <span class="author">KittenAuthor</span>
+          <img src="{{ avatar }}" alt=""/>
+          <span class="author">{{ author }}</span>
         </div>
         <div class="small-10 columns">
-          <h4>Idea Title</h4>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, optio quam ducimus ab aliquam ullam beatae alias sapiente sunt sit nam rem! Aliquam tempora eaque quisquam cum voluptas reprehenderit nulla!
+          <h4>{{ ideaTitle }}</h4>
+          {{ ideaDesc }}
         </div>
       </div>
-
-
-      <div class="row">
-        <div class="small-3 columns avatar">
-          <img src="http://placekitten.com/300/300" alt=""/>
-          <span class="author">KittenAuthor</span>
-        </div>
-        <div class="small-10 columns">
-          <h4>Idea Title</h4>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, optio quam ducimus ab aliquam ullam beatae alias sapiente sunt sit nam rem! Aliquam tempora eaque quisquam cum voluptas reprehenderit nulla!
-        </div>
-      </div>
-
     </script>
 
   </div>
