@@ -30,58 +30,29 @@
     <div class="small-12 columns">
 
       <!-- Idea Info -->
-      <div class="row">
-        <div class="small-2 columns">
-          <img src="http://placekitten.com/300/300">
-          <span>Author</span>
-        </div>
+      <div class="row ideaInfo">
 
-        <div class="small-10 columns left">
-          <h3>ideaTitle</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, aut dignissimos animi aliquam ducimus eius pariatur officiis perferendis commodi molestiae quos dolores ipsa sed recusandae blanditiis deleniti provident alias. Ipsam!</p>
-          <span>Seeking 4 members</span><br><br>
-          <button class="buttonReset">I'm interested!</button>
-          
-        </div>
       </div>
 
       <!-- On the Team -->
       <div class="row teamRow">
         <div class="small-2 columns ideaTeam">
           <h5>On the Team</h5>
-          <img src="http://placekitten.com/300/300">
-          kittenMate
-          <img src="http://placekitten.com/300/300">
-          kittenMate
-          <img src="http://placekitten.com/300/300">
-          kittenMate
+          <div class="teamMember">
+            <img src="http://placekitten.com/300/300">
+            <a href="profile.html">kittenMate</a>
+          </div>
+           <div class="teamMember">
+            <img src="http://placekitten.com/300/300">
+            <a href="profile.html">kittenMate</a>
+          </div>
         </div>
         <div class="small-10 columns">
           <h5> Interested </h5>
           <div class="interestedUser">
             <img src="http://placekitten.com/300/300">
-            KittenAuthor
+            <a href="profile.html">KittenAuthor</a>
           </div>
-           <div class="interestedUser">
-            <img src="http://placekitten.com/300/300">
-            KittenAuthor
-          </div>
-           <div class="interestedUser">
-            <img src="http://placekitten.com/300/300">
-            KittenAuthor asdfasdf
-          </div>
-           <div class="interestedUser">
-            <img src="http://placekitten.com/300/300">
-            KittenAuthor
-          </div>
-           <div class="interestedUser">
-            <img src="http://placekitten.com/300/300">
-            KittenAuthor
-          </div>
-           <div class="interestedUser">
-            <img src="http://placekitten.com/300/300">
-            KittenAuthor
-          </div>  
         </div>
       </div>
 
@@ -113,7 +84,19 @@
   
     <!-- Idea InfoTemplate -->
 
-    <script class="ideaInfoTemp" type="text/templates">      
+    <script class="ideaInfoTemp" type="text/templates">  
+
+        <div class="small-2 columns">
+          <img src="{{ avatar }}">
+          <a href="profile.html?profileId={{ authorId }}">{{ author }}</a>
+        </div>
+
+        <div class="small-10 columns left">
+          <h3>{{ ideaTitle }}</h3>
+          <p>{{ ideaDesc }}</p>
+          <span>Seeking {{ numWanted }} members</span><br><br>
+          <button class="buttonReset interestBtn">I&rsquo;m interested!</button>
+        </div>   
 
     </script>
 

@@ -248,16 +248,33 @@ a:hover{
 	.interestedUser:hover{
 		border: 2px solid #3498db;
 		cursor: hand;
-		color: #FFC225;
-	}
+		}
+
+		.interestedUser:hover a{
+			color: #FFC225;
+		}
+
 
 .ideaTeam{
 	border-right: thin solid #ddd ;
 	}
 
-	.ideaTeam img{
-		margin-top: 10px;
+	.teamMember{
+		border: transparent solid 2px;
+		padding: 5px;
+		border-radius: 5px;
 	}
+
+	.teamMember:hover{
+		border: 2px solid #3498db;
+		cursor: hand;
+		color: #FFC225;
+		}
+
+		.teamMember:hover a{
+			color: #FFC225;
+		}
+
 
 
 

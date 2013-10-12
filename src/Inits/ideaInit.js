@@ -5,9 +5,16 @@
 		// Then we can populate the page with the information.
 
 		DB.getIdea(_.getURLParameter("ideaId"), function(ideaProfile){
-			console.log(ideaProfile);
+			ideaProfile.el = ".ideaInfo";
+
+			var ideaInfoView = new IdeaInfoView(ideaProfile);
 
 
+			for(var i = 0; i < ideaProfile.interestList.length; i++){
+				if(ideaProfile.interestList[i] === user.id){
+					console.log('high five!')
+				}
+			}
 		})// End of DB.getIdea
 
 
