@@ -30,42 +30,22 @@
 
     <div class="small-12 columns">
     <!-- User's Profile -->
-    
-    <div class="row userBio">
-      <div class="columns small-2">
-        <img src="https://2.gravatar.com/avatar/a6a65187c4e0da4b2825abb6012231fd?d=https%3A%2F%2Fidenticons.github.com%2Ff8f2c2aea75ab949202aeaaf0f2cfce4.png" alt=""/>
-      </div>
-      <div class="columns small-6 left">
-        <h3>KaoruDev</h3>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, saepe, eveniet, aliquid, sequi recusandae illo possimus labore aspernatur id veritatis eaque ratione corrupti natus inventore eius est libero excepturi voluptatibus!
-      </div>
-    </div>
+      <div class="row userBio"></div>
+
 
     <!-- User's Ideas -->  
 
     <h3 class="ideasHeader">Ideas</h3>
-    <div class="row userIdeas"> 
-      <div class="small-12 columns">
-        <div class="oneUserIdea"><h5>Idea Title</h5>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, amet, doloremque, commodi, officiis nihil eos voluptatum ratione ex dicta deserunt eum beatae autem ipsam! Labore, beatae laudantium alias similique illo.</div>
-        <div class="oneUserIdea"><h5>Idea Title</h5>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, amet, doloremque, commodi, officiis nihil eos voluptatum ratione ex dicta deserunt eum beatae autem ipsam! Labore, beatae laudantium alias similique illo.</div>
-        <div class="oneUserIdea"><h5>Idea Title</h5>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, amet, doloremque, commodi, officiis nihil eos voluptatum ratione ex dicta deserunt eum beatae autem ipsam! Labore, beatae laudantium alias similique illo.</div>
-        <div class="oneUserIdea"><h5>Idea Title</h5>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, amet, doloremque, commodi, officiis nihil eos voluptatum ratione ex dicta deserunt eum beatae autem ipsam! Labore, beatae laudantium alias similique illo.</div>
+    <div class="row"> 
+      <div class="small-12 columns userIdeas">
+        
       </div>
     </div>
 
     <h3 class="interestHeader">Interests</h3>
     <div class="row userInterests">
-      <div class="small-3 columns avatar">
-        <img src="http://placekitten.com/300/300" alt=""/>
-        <span class="author">KittenAuthor</span>
-      </div>
-      <div class="small-10 columns">
-        <h4>Idea Title</h4>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, optio quam ducimus ab aliquam ullam beatae alias sapiente sunt sit nam rem! Aliquam tempora eaque quisquam cum voluptas reprehenderit nulla!
+      <div class="small-12 columns">
+
       </div>
     </div>
 
@@ -94,27 +74,66 @@
 
   <!--Start Templating-->
   <div class="templates">
-    <script class="user-idea-template" type="text/template">
-      <div class="user-idea-template">
-        <div class="row">
-          <div class="large-6 columns"><h3><a href="idea.html?ideaId=<%= ideaId %>"><%= ideaTitle %></a></h3></div>
-          <div class="large-3 columns"><h3>Votes: <%= votes %></h3></div>
-          <div class="large-3 columns"><h3>Interested: <%= interest %></h3></div> 
+  
+    <!-- Bio Template -->
+
+    <script class="bioTemp" type="text/templates">      
+
+        <div class="columns small-2">
+          <img src="https://2.gravatar.com/avatar/a6a65187c4e0da4b2825abb6012231fd?d=https%3A%2F%2Fidenticons.github.com%2Ff8f2c2aea75ab949202aeaaf0f2cfce4.png" alt=""/>
         </div>
-        <hr />
-      </div>
+        <div class="columns small-6 left">
+          <h3>KaoruDev</h3>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, saepe, eveniet, aliquid, sequi recusandae illo possimus labore aspernatur id veritatis eaque ratione corrupti natus inventore eius est libero excepturi voluptatibus!
+        </div>
+
     </script>
 
-    <script class="user-interests-template" type="text/template">
-      <div class="user-interests-template">
-        <div class="row">
-          <div class="large-6 columns"><h3><a href="idea.html?ideaId=<%= ideaId %>"><%= ideaTitle %></a></h3></div>
-          <div class="large-3 columns"><h3>Votes: <%= votes %></h3></div>
-          <div class="large-3 columns"><h3>Still Seeking: <%= numWanted %></h3></div> 
-        </div>
-        <hr />
-      </div>
+    <!-- Idea Template -->
+
+    <script class="userIdeaTemp" type="text/templates">
+
+        <div class="oneUserIdea"><h5>Idea Title</h5>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, amet, doloremque, commodi, officiis nihil eos voluptatum ratione ex dicta deserunt eum beatae autem ipsam! Labore, beatae laudantium alias similique illo.</div>
+        <div class="oneUserIdea"><h5>Idea Title</h5>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, amet, doloremque, commodi, officiis nihil eos voluptatum ratione ex dicta deserunt eum beatae autem ipsam! Labore, beatae laudantium alias similique illo.</div>
+        <div class="oneUserIdea"><h5>Idea Title</h5>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, amet, doloremque, commodi, officiis nihil eos voluptatum ratione ex dicta deserunt eum beatae autem ipsam! Labore, beatae laudantium alias similique illo.</div>
+        <div class="oneUserIdea"><h5>Idea Title</h5>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, amet, doloremque, commodi, officiis nihil eos voluptatum ratione ex dicta deserunt eum beatae autem ipsam! Labore, beatae laudantium alias similique illo.</div>
+
     </script>
+
+
+    <!-- Interest Template -->
+
+    <script class="userInterestTemp" type="text/templates">
+
+      <div class="row">
+        <div class="small-3 columns avatar">
+          <img src="http://placekitten.com/300/300" alt=""/>
+          <span class="author">KittenAuthor</span>
+        </div>
+        <div class="small-10 columns">
+          <h4>Idea Title</h4>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, optio quam ducimus ab aliquam ullam beatae alias sapiente sunt sit nam rem! Aliquam tempora eaque quisquam cum voluptas reprehenderit nulla!
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="small-3 columns avatar">
+          <img src="http://placekitten.com/300/300" alt=""/>
+          <span class="author">KittenAuthor</span>
+        </div>
+        <div class="small-10 columns">
+          <h4>Idea Title</h4>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, optio quam ducimus ab aliquam ullam beatae alias sapiente sunt sit nam rem! Aliquam tempora eaque quisquam cum voluptas reprehenderit nulla!
+        </div>
+      </div>
+
+    </script>
+
   </div>
   <!--End Templating-->
 
@@ -137,13 +156,13 @@
 <script type="text/javascript" src="src/myFirebase.js"></script>
 
 <!--Backbone-->
-<script type="text/javascript" src="src/models.js"></script>
-<script type="text/javascript" src="src/collections.js"></script>
-<script type="text/javascript" src="src/views.js"></script>
+<script type="text/javascript" src="src/Backbone/models.js"></script>
+<script type="text/javascript" src="src/Backbone/collections.js"></script>
+<script type="text/javascript" src="src/Backbone/profileViews.js"></script>
 
 <!-- Main js -->
+<script type="text/javascript" src="src/Inits/profileInit.js"></script>
 <script type="text/javascript" src="src/main.js"></script>
-<script type="text/javascript" src="src/listInit.js"></script>
 <script type="text/javascript" src="src/route.js"></script>
 
 

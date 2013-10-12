@@ -51,8 +51,9 @@
 		case "form.html":
 			formInit();
 			break;
-		case "idea.html":
-			ideaInit();
+		case "profile.html":
+			profileInit();
+			break;
 		default:
 			break;
 	}
