@@ -41,6 +41,10 @@ ul.inline-list{
 	margin-bottom: 5px;
 }
 
+a:hover{
+	color: #FFC225;
+}
+
 /*****************NAV*********************/
 .navBar{
 	background-color: #2f2f2f;

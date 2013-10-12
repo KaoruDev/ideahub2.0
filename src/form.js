@@ -92,4 +92,14 @@
 		return valid;
 	}
 
+
+//*************************************************************//
+//***************** BUTTON TRIGGERS **************************//
+//***********************************************************//
+		
+		$(document).on("click", ".myProfile", function(e){
+			e.preventDefault;
+			window.location.assign("profile.html?profileId=" + user.id)
+		});
+
 })();

@@ -20,42 +20,38 @@
 			}
 			// if user is new to page, record her info.
 			recordNewUser();
+			route();
 
 			$(".hello").text("Welcome, " + user.username)
 		} else {
 			// Redirects users who have not logged in.
-			// if(pageLocation !== "index.html"){
-			// 	window.location.assign("index.html");
-			// }
+			if(pageLocation !== "index.html" ){
+				window.location.assign("index.html");
+			}
+
+			$(".login").on("click", function(evt){
+					evt.preventDefault;
+					auth.login("github");
+			});
+			listInit();
 		}
 	});
 
-	switch(pageLocation){
-		case "":
-			$(".login").on("click", function(evt){
-				evt.preventDefault;
-				auth.login("github");
-			});
-			listInit();
-			break;
-		case "index.html":
-			$(".login").on("click", function(evt){
-				evt.preventDefault;
-				auth.login("github");
-			});
-			listInit();
-			break;
-		case "user.html":
-			listInit();
-			break;
-		case "form.html":
-			formInit();
-			break;
-		case "profile.html":
-			profileInit();
-			break;
-		default:
-			break;
+
+	var route = function(){
+		switch(pageLocation){
+			case "user.html":
+				listInit();
+				break;
+			case "form.html":
+				formInit();
+				break;
+			case "profile.html":
+				profileInit();
+				break;
+			default:
+				break;
+		}
 	}
 
 

@@ -14,7 +14,7 @@
 
 
 //*************************************************************//
-//***************   BUTTON TRIGGERS **************************//
+//***************** BUTTON TRIGGERS **************************//
 //***********************************************************//
 
 	$(".logout").on("click", function(evt){
@@ -30,6 +30,12 @@
 			$(this).text("Show More")
 		}
 		$(this).closest(".columns").find(".ideaDesc").toggleClass("fullDesc");
+	});
+
+	$(document).on("click", ".myProfile", function(e){
+		e.preventDefault;
+		console.log('hi');
+		window.location.assign("profile.html?profileId=" + user.id);
 	});
 
 	

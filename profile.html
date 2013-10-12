@@ -19,6 +19,7 @@
         <div class="subNavLinks">
           <a href="index.html" class="logout">Log out</a>
           <a href="form.html">Add Idea!</a>
+          <a href="#" class="myProfile">My Profile</a>
         </div>
       </div>
     </div>
@@ -61,6 +62,7 @@
             </div>
             <div class="small-7 columns">
               <ul class="inline-list right">
+                <li><a href="#" class="myProfile">My Profile</a></li>
                 <li><a href="#" class="logout">Logout</a></li>
                 <li><a href="form.html">Add Idea</a></li>
               </ul>
@@ -73,18 +75,19 @@
 
 
   <!--Start Templating-->
-  <div class="templates">
+  <div id="templates">
   
     <!-- Bio Template -->
 
     <script class="bioTemp" type="text/templates">      
 
         <div class="columns small-2">
-          <img src="https://2.gravatar.com/avatar/a6a65187c4e0da4b2825abb6012231fd?d=https%3A%2F%2Fidenticons.github.com%2Ff8f2c2aea75ab949202aeaaf0f2cfce4.png" alt=""/>
+          <img src="{{ avatar }}" alt=""/>
         </div>
         <div class="columns small-6 left">
-          <h3>KaoruDev</h3>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, saepe, eveniet, aliquid, sequi recusandae illo possimus labore aspernatur id veritatis eaque ratione corrupti natus inventore eius est libero excepturi voluptatibus!
+          <h3>{{ username }}</h3><br>
+          <h4><a href="mailto:{{ email }}">Email</a></h4><br>
+          <h4><a href="{{ profileUrl }}">Github</a></h4><br>
         </div>
 
     </script>
