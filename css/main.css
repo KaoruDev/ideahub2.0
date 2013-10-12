@@ -233,15 +233,33 @@ a:hover{
 
 
 /*******************Idea Profile page *****************/
-.singleIdeaFeed{
-	margin: 50px 20px;
-}
 
-/****************** Profile ***************************/
 
-.your-ideas {
-	margin-top: 50px;
-}
+.interestedUser{
+	width: 100px;
+	float: left;
+	margin: 0px 20px 20px 0px;
+	padding: 5px;
+	border-radius: 5px;
+	border: transparent solid 2px;
+	word-wrap: break-word;
+	}
+
+	.interestedUser:hover{
+		border: 2px solid #3498db;
+		cursor: hand;
+		color: #FFC225;
+	}
+
+.ideaTeam{
+	border-right: thin solid #ddd ;
+	}
+
+	.ideaTeam img{
+		margin-top: 10px;
+	}
+
+
 
 /*****************Reflexive settings ******************/
 

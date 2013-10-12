@@ -25,97 +25,104 @@
     </div>
   </div>
   <!-- End Header and Nav -->
+
   <div class="row mainBody">
-
-    <!-- Main Feed -->
-
     <div class="small-12 columns">
-    <!-- User's Profile -->
-      <div class="row userBio"></div>
 
+      <!-- Idea Info -->
+      <div class="row">
+        <div class="small-2 columns">
+          <img src="http://placekitten.com/300/300">
+          <span>Author</span>
+        </div>
 
-    <!-- User's Ideas -->  
-
-    <h3 class="ideasHeader">Ideas</h3>
-    <div class="row"> 
-      <div class="small-12 columns authorIdeas">
-        
+        <div class="small-10 columns left">
+          <h3>ideaTitle</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, aut dignissimos animi aliquam ducimus eius pariatur officiis perferendis commodi molestiae quos dolores ipsa sed recusandae blanditiis deleniti provident alias. Ipsam!</p>
+          <span>Seeking 4 members</span><br><br>
+          <button class="buttonReset">I'm interested!</button>
+          
+        </div>
       </div>
-    </div>
 
-    <h3 class="interestHeader">Interests</h3>
-      <div class="small-12 columns userInterests">
-
+      <!-- On the Team -->
+      <div class="row teamRow">
+        <div class="small-2 columns ideaTeam">
+          <h5>On the Team</h5>
+          <img src="http://placekitten.com/300/300">
+          kittenMate
+          <img src="http://placekitten.com/300/300">
+          kittenMate
+          <img src="http://placekitten.com/300/300">
+          kittenMate
+        </div>
+        <div class="small-10 columns">
+          <h5> Interested </h5>
+          <div class="interestedUser">
+            <img src="http://placekitten.com/300/300">
+            KittenAuthor
+          </div>
+           <div class="interestedUser">
+            <img src="http://placekitten.com/300/300">
+            KittenAuthor
+          </div>
+           <div class="interestedUser">
+            <img src="http://placekitten.com/300/300">
+            KittenAuthor asdfasdf
+          </div>
+           <div class="interestedUser">
+            <img src="http://placekitten.com/300/300">
+            KittenAuthor
+          </div>
+           <div class="interestedUser">
+            <img src="http://placekitten.com/300/300">
+            KittenAuthor
+          </div>
+           <div class="interestedUser">
+            <img src="http://placekitten.com/300/300">
+            KittenAuthor
+          </div>  
+        </div>
       </div>
-    </div>
 
- 
-  <!-- Footer -->
- 
+   
+      <!-- Footer -->
+   
       <footer class="row">
-        <div class="small-12 columns">
+        <div class="large-12 small-12 columns">
           <hr />
           <div class="row">
-            <div class="small-5 columns">
-              <p>We haz idea!</p>
+            <div class="large-5 small-5 columns">
+              <p>IdeaHub: We haz ideas!</p>
             </div>
-            <div class="small-7 columns">
+            <div class="large-7 small-7 columns">
               <ul class="inline-list right">
-                <li><a href="#" class="myProfile">My Profile</a></li>
-                <li><a href="#" class="logout">Logout</a></li>
-                <li><a href="form.html">Add Idea</a></li>
+                 <li><a href="#" class="myProfile">My Profile</a></li>
+                 <li><a href="form.html">Add Idea</a></li>
+                <li><a href="index.html" class="logout">Logout</a></li>
               </ul>
             </div>
           </div>
         </div>
-      </footer>
-
+      </footer>    
   </div>
 
 
   <!--Start Templating-->
   <div id="templates">
   
-    <!-- Bio Template -->
+    <!-- Idea InfoTemplate -->
 
-    <script class="bioTemp" type="text/templates">      
-
-        <div class="columns small-2">
-          <img src="{{ avatar }}" alt=""/>
-        </div>
-        <div class="columns small-6 left">
-          <h3>{{ username }}</h3><br>
-          <h4><a href="mailto:{{ email }}">Email</a></h4><br>
-          <h4><a href="{{ profileUrl }}">Github</a></h4><br>
-        </div>
+    <script class="ideaInfoTemp" type="text/templates">      
 
     </script>
 
-    <!-- Idea Template -->
-
-    <script class="userAuthorTemp" type="text/templates">
-
-        <div class="oneUserIdea"><h5>{{ ideaTitle }}</h5>
-        {{ ideaDesc }}
+    <!-- Who's Interested Template -->
+    
+    <script class="interetTemp" type="text/templates">      
 
     </script>
 
-
-    <!-- Interest Template -->
-
-    <script class="userInterestTemp" type="text/templates">
-
-      <div class="row">
-        <div class="small-3 columns avatar">
-          <img src="{{ avatar }}" alt=""/>
-          <span class="author">{{ author }}</span>
-        </div>
-        <div class="small-10 columns">
-          <h4>{{ ideaTitle }}</h4>
-          {{ ideaDesc }}
-        </div>
-      </div>
-    </script>
 
   </div>
   <!--End Templating-->
