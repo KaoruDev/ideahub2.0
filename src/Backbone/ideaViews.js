@@ -28,7 +28,7 @@
 			$(self.el).find(".interestBtn").removeClass("interestBtn");
 			
 			//Update idea info on DB
-			self.options.interestList.push(user.id);
+			self.options.interestList.push(user);
 
 			DB.setIdea(self.options.ideaId, self.options, self.options.priority);
 
@@ -44,17 +44,40 @@
 
 	// Team Members Views TBA...
 
-
-
 	// Folks who are interested views
 
 
-	window.IdeaInterestView = Backbone.View.extend({
-
+	window.InterestListView = Backbone.View.extend({
+		initialize: function(options){
+			this.listenTo(this.collection, "add", this.addInterestView);
+		},
+		addInterestView: function(newModel){
+			var interestView = new InterestedUserView({
+				model: newModel
+			});
+			$(this.el).append(interestView.el);
+		}
 	});
 
 	window.InterestedUserView = Backbone.View.extend({
+		initialize: function(options){
+			this.templateGen = _.getTemplate("interestView");
+			this.render();
+		},
 
+		events: {
+			"click .interestedUser" : "navigateToProfile"
+		},
+
+		render: function(){
+			console.log(this.model.toJSON())
+			var newHtml = this.templateGen(this.model.toJSON());
+			$(this.el).html(newHtml);
+		},
+
+		navigateToProfile: function(){
+			window.location.assign("profile.html?profileId=" + this.model.get("userOb").id)
+		}
 	});
 
 })();

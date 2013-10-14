@@ -49,9 +49,9 @@
         </div>
         <div class="small-10 columns">
           <h5> Interested </h5>
-          <div class="interestedUser">
-            <img src="http://placekitten.com/300/300">
-            <a href="profile.html">KittenAuthor</a>
+          <div class="interestDisplay">
+            
+
           </div>
         </div>
       </div>
@@ -98,6 +98,13 @@
           <button class="buttonReset interestBtn">I&rsquo;m interested!</button>
         </div>   
 
+    </script>
+
+    <script class="interestView" type="text/templates">
+      <div class="interestedUser">  
+        <img src="{{ userOb.avatar_url }}">
+        <a href="profile.html?profileId={{ userOb.id }}">{{ userOb.username }}</a>
+      </div>
     </script>
 
     <!-- Who's Interested Template -->

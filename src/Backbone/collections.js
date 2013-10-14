@@ -6,5 +6,9 @@
 	window.ProfileIdeasCollection = Backbone.Collection.extend({
 		model: ProfileIdeaModel
 	});
+
+	window.ProfileInterestCollection = Backbone.Collection.extend({
+		model: ProfileInterestModel
+	})
 	
 })();

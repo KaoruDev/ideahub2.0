@@ -7,5 +7,9 @@
 	window.ProfileIdeaModel = Backbone.Model.extend({
 
 	});
+
+	window.ProfileInterestModel = Backbone.Model.extend({
+
+	});
 	
 })();
