@@ -3,6 +3,7 @@
 	window.DB;
 	window.user;
 	window.auth;
+	window.satalite = _.extend({}, Backbone.Events);
 
 	_.templateSettings = {
 	  interpolate: /\{\{(.+?)\}\}/g

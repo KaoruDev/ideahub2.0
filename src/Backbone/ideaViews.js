@@ -42,9 +42,11 @@
 	});
 
 
-	// Team Members Views TBA...
-
-	// Folks who are interested views
+	/////////////////////////////////////////////
+	//////							   ///////////////
+	//////      Interest Views         ////////////////////
+	//////							   /////////////////////////
+	//////////////////////////////////////////////////////////////////
 
 
 	window.InterestListView = Backbone.View.extend({
@@ -105,6 +107,8 @@
 			$(this.el).find('.pickMate').addClass("removeMate");
 			$(this.el).find(".pickMate").removeClass("pickMate");
 			$(this.el).find(".removeMate").html("Remove");
+
+			satalite.trigger("teamMemberAccept", this.model);
 		},
 
 		removeMate: function(e){
@@ -120,26 +124,50 @@
 			$(this.el).find('.removeMate').addClass("pickMate");
 			$(this.el).find(".removeMate").removeClass("removeMate");
 			$(this.el).find(".pickMate").html("Select");
+
+
+			satalite.trigger("teamMemberReject", this.model);
 		}	
 	});
+
+	/////////////////////////////////////////////
+	//////							   ///////////////
+	//////      TeamViews              ////////////////////
+	//////							   /////////////////////////
+	//////////////////////////////////////////////////////////////////
 
 
 	window.TeamListView = Backbone.View.extend({
 		initialize: function(options){
 			this.listenTo(this.collection, "add", this.addTeamMate);
+			this.listenTo(satalite, "teamMemberAccept", this.addChosenMate);
+			this.listenTo(satalite, "teamMemberReject", this.removeChosenMate);
 		},
 		addTeamMate: function(newModel){
 			var teamMateView = new TeamMateView({
 				model: newModel
 			});
 			$(this.el).append(teamMateView.el);
+		},
+		addChosenMate: function(model){
+			this.collection.add(model);
+		},
+		removeChoseMate: function(model){
+			this.collection.remove(model);
 		}
 	});
 
 	window.TeamMateView = Backbone.View.extend({
 		initialize: function(options){
-			this.templateGen = _.getTemplate("teamMateTemp")
+			this.templateGen = _.getTemplate("teamMateTemp");
+			this.listenTo(satalite, "teamMemberReject", this.removeMateView);
 			this.render();
+		},
+
+		removeMateView: function(model){
+			if(model.get("userOb").id === this.model.get("userOb").id){
+				this.remove();
+			};
 		},
 
 		render: function(){

@@ -26,7 +26,6 @@
 
 			for(var i = 0; i < ideaProfile.interestList.length; i++){
 				if(ideaProfile.interestList[i] !== ideaProfile.authorId){
-				//if(true){
 					DB.getUser(ideaProfile.interestList[i], function(storedUser){
 						storedUser.useTemplate = interestedTemp;
 						storedUser.ideaOb = ideaProfile;
