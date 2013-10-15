@@ -35,23 +35,17 @@
       </div>
 
       <!-- On the Team -->
-      <div class="row teamRow">
-        <div class="small-2 columns ideaTeam">
-          <h5>On the Team</h5>
-          <div class="teamMember">
-            <img src="http://placekitten.com/300/300">
-            <a href="profile.html">kittenMate</a>
-          </div>
-           <div class="teamMember">
-            <img src="http://placekitten.com/300/300">
-            <a href="profile.html">kittenMate</a>
+      <div class="row team-interest-row">
+        <div class="small-2 columns">
+          <h5>On the team</h5>
+          <div class="teamDisplay">
+            
           </div>
         </div>
         <div class="small-10 columns">
           <h5> Interested </h5>
           <div class="interestDisplay">
             
-
           </div>
         </div>
       </div>
@@ -60,13 +54,13 @@
       <!-- Footer -->
    
       <footer class="row">
-        <div class="large-12 small-12 columns">
+        <div class="small-12 columns">
           <hr />
           <div class="row">
-            <div class="large-5 small-5 columns">
+            <div class="small-5 columns">
               <p>IdeaHub: We haz ideas!</p>
             </div>
-            <div class="large-7 small-7 columns">
+            <div class="small-7 columns">
               <ul class="inline-list right">
                  <li><a href="#" class="myProfile">My Profile</a></li>
                  <li><a href="form.html">Add Idea</a></li>
@@ -87,30 +81,45 @@
     <script class="ideaInfoTemp" type="text/templates">  
 
         <div class="small-2 columns">
-          <img src="{{ avatar }}">
+          <img src="{{ avatar }}"><br/>
           <a href="profile.html?profileId={{ authorId }}">{{ author }}</a>
         </div>
 
-        <div class="small-10 columns left">
+        <div class="small-10 columns">
           <h3>{{ ideaTitle }}</h3>
           <p>{{ ideaDesc }}</p>
-          <span>Seeking {{ numWanted }} members</span><br><br>
+          <span>Seeking {{ numWanted }} members</span><br/><br/>
           <button class="buttonReset interestBtn">I&rsquo;m interested!</button>
-        </div>   
-
+        </div>
     </script>
 
+    <!-- Team Mate Templates -->
+
+    <script class="teamMateTemp" type="text/templates">
+      <img src="{{ avatar_url }}"><br/>
+      <a href="profile.html?profileId={{ id }}">{{ username }}</a>
+    </script>
+
+    
+    <!-- Interested Users templates -->
+
     <script class="interestView" type="text/templates">
-      <div class="interestedUser">  
-        <img src="{{ userOb.avatar_url }}">
-        <a href="profile.html?profileId={{ userOb.id }}">{{ userOb.username }}</a>
+      <div class="interestedUser">
+        <div> 
+          <a href="profile.html?profileId={{ userOb.id }}">{{ userOb.username }} 
+          <img src="{{ userOb.avatar_url }}"></a>
+        </div>
       </div>
     </script>
 
-    <!-- Who's Interested Template -->
-    
-    <script class="interetTemp" type="text/templates">      
-
+    <script class="interestAuthorView" type="text/templates">
+      <div class="interestedUser">
+        <div> 
+          <a href="profile.html?profileId={{ userOb.id }}">{{ userOb.username }} 
+          <img src="{{ userOb.avatar_url }}"></a>
+          <button class="buttonReset pickMate">Select</button>
+        </div>
+      </div>
     </script>
 
 

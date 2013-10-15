@@ -236,7 +236,7 @@ a:hover{
 
 
 .interestedUser{
-	width: 100px;
+	width: 90px;
 	float: left;
 	margin: 0px 20px 20px 0px;
 	padding: 5px;
@@ -245,36 +245,31 @@ a:hover{
 	word-wrap: break-word;
 	}
 
-	.interestedUser:hover{
-		border: 2px solid #3498db;
-		cursor: hand;
-		}
-
-		.interestedUser:hover a{
-			color: #FFC225;
-		}
-
-
-.ideaTeam{
-	border-right: thin solid #ddd ;
+	.pickMate{
+		display: block;
+		width: 100%;
+		margin-top: 5px;
+	}
+	
+	.removeMate{
+		display: block;
+		width: 100%;
+		margin-top: 5px;
+		background-color: #f00;
 	}
 
-	.teamMember{
-		border: transparent solid 2px;
-		padding: 5px;
-		border-radius: 5px;
-	}
+.teamMemberPic{
+	display:block;
+	margin: 10px 0;
+	width: 80px;
+}
 
-	.teamMember:hover{
-		border: 2px solid #3498db;
-		cursor: hand;
-		color: #FFC225;
-		}
+.team-interest-row{
+	border-top: thin solid #ddd;
+	padding-top: 20px;
+}
 
-		.teamMember:hover a{
-			color: #FFC225;
-		}
-
+	
 
 
 

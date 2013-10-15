@@ -22,8 +22,8 @@
 
 		},
 
-		setIdea: function(ideaId, ideaObj, priority){
-			fireBIdeas.child(ideaId).setWithPriority(ideaObj, priority + "");
+		setIdea: function(ideaId, ideaObj){
+			fireBIdeas.child(ideaId).set(ideaObj);
 		},
 
 		getUser: function(id, callback){

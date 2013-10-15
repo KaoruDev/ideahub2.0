@@ -12,6 +12,12 @@
 
 			var ideaInfoView = new IdeaInfoView(ideaProfile);
 
+			if(ideaProfile.authorId === user.id){
+				var interestedTemp = "interestAuthorView";
+			}else{
+				var interestedTemp = "interestView";
+			}
+
 			var interestListView = new InterestListView({
 				collection: interestCollection,
 				el: ".interestDisplay"
@@ -19,13 +25,31 @@
 
 
 			for(var i = 0; i < ideaProfile.interestList.length; i++){
-				//if(ideaProfile.interestList[i] !== user.id){
-				if(true){
+				if(ideaProfile.interestList[i] !== ideaProfile.authorId){
+				//if(true){
 					DB.getUser(ideaProfile.interestList[i], function(storedUser){
+						storedUser.useTemplate = interestedTemp;
+						storedUser.ideaOb = ideaProfile;
 						interestCollection.add(storedUser);
 					});
 				}
 			}
+
+			var teamList = new TeamCollection();
+			var teamListView = new TeamListView({
+				collection: teamList,
+				el: ".teamDisplay"
+			})
+			//////////////////// TEAM MATE LIST VIEW
+
+			if(ideaProfile.teamMembers){
+				for(var i = 0; i < ideaProfile.teamMembers.length; i++){
+					DB.getUser(ideaProfile.teamMembers[i], function(storedUser){
+						teamList.add(storedUser);
+					});
+				}
+			}
+
 
 		})// End of DB.getIdea
 

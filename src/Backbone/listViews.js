@@ -27,7 +27,7 @@
 			$(this.el).html(newHtml);
 
 			if(window.user && isUserInterested(this.model.get("interestList"))){
-				$(this.el).find(".interestBtn").text("All in!");
+				$(this.el).find(".interestBtn").text("Opted In!");
 				$(this.el).find(".interestBtn").removeClass("interestBtn");
 			}
 
@@ -40,7 +40,7 @@
 		userInterest: function(button){
 			var self = this;
 
-			$(this.el).find(".interestBtn").text("All in!");
+			$(this.el).find(".interestBtn").text("Opted In!");
 			$(this.el).find(".interestBtn").removeClass("interestBtn");
 			
 			//Update idea info on DB
