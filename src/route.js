@@ -44,7 +44,12 @@
 				listInit();
 				break;
 			case "form.html":
-				formInit();
+				var urlParams = _.getURLParameter("ideaId");
+				if(urlParams !== "null"){
+					formEditInit(urlParams);
+				}else{
+					formInit();
+				}	
 				break;
 			case "profile.html":
 				profileInit();

@@ -23,7 +23,6 @@
 				el: ".interestDisplay"
 			});
 
-
 			for(var i = 0; i < ideaProfile.interestList.length; i++){
 				if(ideaProfile.interestList[i] !== ideaProfile.authorId){
 					DB.getUser(ideaProfile.interestList[i], function(storedUser){
