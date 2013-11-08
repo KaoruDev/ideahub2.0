@@ -16,8 +16,6 @@
 			var newHtml = this.templateGen(this.options);
 			$(this.el).html(newHtml);
 
-			console.log(newHtml)
-
 			if(window.user && (this.options.interestList.indexOf(user.id) >= 0)){
 				$(this.el).find(".interestBtn").text("Opted in!");
 				$(this.el).find(".interestBtn").removeClass("interestBtn");
@@ -28,13 +26,10 @@
 			DB.getUser(this.options.authorId, function(storedUser){
 				if(storedUser.userOb.id !== user.id){
 					$(self.el).find(".editIdea").hide();
-					//$(self.el).find(".deleteIdea").hide();
+					$(self.el).find(".deleteIdea").hide();
 				}
 
 			});
-
-			//Hide for now until we can code to delete the idea.
-			$(self.el).find(".deleteIdea").hide();
 		},
 
 		userInterest: function(button){
@@ -55,8 +50,43 @@
 			})
 		},
 
-		deleteIdea: function(){
-			console.log("Disconnect all users from ideas and then delete idea!")
+		deleteIdea: function(e){
+			e.preventDefault;
+
+			var self = this;
+
+			//Disconnect all users from ideas and then delete idea!
+
+			if(confirm("Are you sure you want to delete your idea?")){
+				//Delete idea from authorList
+				DB.getUser(self.options.authorId, function(author){
+					console.log(author.authorList);
+
+					author.authorList.splice(author.authorList.indexOf(self.options.ideaId));
+					console.log(author.authorList);
+					
+					//DB.setUser(author.userOb.id, author);
+					//modifyInterest();
+				});
+			}
+
+			var modifyInterest = function(){
+				for(var i = 0; i < self.options.interestList.length; i++){
+					DB.getUser(self.options.interestList[i], function(storedUser){
+						storedUser.iList.splice(storedUser.iList.indexOf(self.options.ideaId), 1);
+						DB.setUser(storedUser.userOb.id, storedUser)
+					});
+				}
+				deleteIdea();
+			};
+
+			//Now that all references have been deleted, we can now delete the idea itself.
+			var deleteIdea = function(){
+				DB.setIdea(self.options.ideaid, {});
+				window.location.assign("user.html")
+			};
+
+			//Loop through interestList and modify all of user's iList to remove idea's id from their list.
 		}
 	});
 
@@ -135,7 +165,7 @@
 			var ideaId = _.getURLParameter("ideaId");
 
 			DB.getIdea(ideaId, function(storedIdea){
-				storedIdea.teamMembers.splice(storedIdea.teamMembers.indexOf(self.model.get("userOb").id));
+				storedIdea.teamMembers.splice(storedIdea.teamMembers.indexOf(self.model.get("userOb").id), 1);
 				DB.setIdea(ideaId, storedIdea)
 			});
 
