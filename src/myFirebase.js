@@ -1,5 +1,5 @@
 //(function(){
-	var myFireBase = new Firebase("https://ideahub2.firebaseio.com")
+	var myFireBase = new Firebase("https://046223cc8c28a13be29030bdd5f81d8aa49ac114.firebaseio.com/")
 		, fireBUsers = myFireBase.child("users")
 		, fireBIdeas = myFireBase.child("ideas")
 		, fireBUser

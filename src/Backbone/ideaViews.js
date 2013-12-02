@@ -37,7 +37,7 @@
 
 			$(self.el).find(".interestBtn").text("Opted in!");
 			$(self.el).find(".interestBtn").removeClass("interestBtn");
-			
+
 			//Update idea info on DB
 			self.options.interestList.push(user);
 
@@ -60,21 +60,21 @@
 			if(confirm("Are you sure you want to delete your idea?")){
 				//Delete idea from authorList
 				DB.getUser(self.options.authorId, function(author){
-					console.log(author.authorList);
 
 					author.authorList.splice(author.authorList.indexOf(self.options.ideaId));
-					console.log(author.authorList);
-					
-					//DB.setUser(author.userOb.id, author);
-					//modifyInterest();
+					DB.setUser(author.userOb.id, author);
+
+					modifyInterest();
 				});
 			}
 
 			var modifyInterest = function(){
 				for(var i = 0; i < self.options.interestList.length; i++){
 					DB.getUser(self.options.interestList[i], function(storedUser){
-						storedUser.iList.splice(storedUser.iList.indexOf(self.options.ideaId), 1);
-						DB.setUser(storedUser.userOb.id, storedUser)
+						if(storedUser.iList.indexOf(self.options.ideaId) !== -1){
+							storedUser.iList.splice(storedUser.iList.indexOf(self.options.ideaId), 1);
+							DB.setUser(storedUser.userOb.id, storedUser)
+						}
 					});
 				}
 				deleteIdea();
@@ -82,7 +82,7 @@
 
 			//Now that all references have been deleted, we can now delete the idea itself.
 			var deleteIdea = function(){
-				DB.setIdea(self.options.ideaid, {});
+				DB.setIdea(self.options.ideaId, {});
 				window.location.assign("user.html")
 			};
 
@@ -92,9 +92,9 @@
 
 
 	/////////////////////////////////////////////
-	//////							   ///////////////
+	//////							   						 ///////////////
 	//////      Interest Views         ////////////////////
-	//////							   /////////////////////////
+	//////							   						 /////////////////////////
 	//////////////////////////////////////////////////////////////////
 
 
@@ -180,9 +180,9 @@
 	});
 
 	/////////////////////////////////////////////
-	//////							   ///////////////
+	//////							   						 ///////////////
 	//////      TeamViews              ////////////////////
-	//////							   /////////////////////////
+	//////							   						 /////////////////////////
 	//////////////////////////////////////////////////////////////////
 
 

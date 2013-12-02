@@ -41,17 +41,17 @@
 					author: user.username,
 					authorId: user.id,
 					avatar: user.avatar_url,
-					ideaTitle: ideaTitle, 
+					ideaTitle: ideaTitle,
 					ideaDesc: ideaDesc,
-					ideaId: ideaCounter,
+					ideaId: ideaCounter.toString(),
 					interestList: [user.id],
 					numWanted: numWanted
 				});
 
 				recorded();
-				
+
 				DB.getUser(user.id, updateUser);
-	
+
 			};
 
 			var updateIdea = function(ideaId){
@@ -63,7 +63,7 @@
 					window.location.assign("user.html");
 				});
 			};
-		
+
 			var updateUser = function(author){
 				author.authorList.push(ideaCounter);
 				author.iList.push(ideaCounter);
@@ -78,15 +78,15 @@
 				updateIdea(ideaCounter);
 				newIdea = false;
 			}else{
-				DB.getCounter(addIdea); 
+				DB.getCounter(addIdea);
 			}
 		}
 	};
 
 	/////////////////////////////////////////////
-	//////							   ///////////////
+	//////							   						 ///////////////
 	//////      FORM EDIT INIT         ////////////////////
-	//////							   /////////////////////////
+	//////							   						 /////////////////////////
 	//////////////////////////////////////////////////////////////////
 
 	window.formEditInit = function(ideaId){
@@ -119,9 +119,9 @@
 
 
 	/////////////////////////////////////////////
-	//////							   ///////////////
+	//////							       				 ///////////////
 	//////      Helper Methods         ////////////////////
-	//////							   /////////////////////////
+	//////							   						 /////////////////////////
 	//////////////////////////////////////////////////////////////////
 
 
@@ -152,7 +152,7 @@
 //*************************************************************//
 //***************** BUTTON TRIGGERS **************************//
 //***********************************************************//
-		
+
 		$(document).on("click", ".myProfile", function(e){
 			e.preventDefault;
 			window.location.assign("profile.html?profileId=" + user.id)
